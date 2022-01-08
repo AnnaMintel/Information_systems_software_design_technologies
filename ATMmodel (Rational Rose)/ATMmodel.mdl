@@ -5157,7 +5157,7 @@
 			    location   	(2296, 478)
 			    anchor_loc 	1
 			    nlines     	2
-			    max_width  	799
+			    max_width  	803
 			    justify    	0
 			    label      	"")
 			icon       	"boundary"
@@ -5189,7 +5189,7 @@
 			    location   	(375, 522)
 			    anchor_loc 	1
 			    nlines     	2
-			    max_width  	591
+			    max_width  	595
 			    justify    	0
 			    label      	"")
 			icon       	"Business Actor"
@@ -5220,7 +5220,7 @@
 			    location   	(1512, 1331)
 			    anchor_loc 	1
 			    nlines     	2
-			    max_width  	456
+			    max_width  	459
 			    justify    	0
 			    label      	"")
 			icon       	"control"
@@ -5251,7 +5251,7 @@
 			    location   	(331, 2024)
 			    anchor_loc 	1
 			    nlines     	2
-			    max_width  	446
+			    max_width  	448
 			    justify    	0
 			    label      	"")
 			icon       	"entity"
@@ -5282,7 +5282,7 @@
 			    location   	(377, 1246)
 			    anchor_loc 	1
 			    nlines     	2
-			    max_width  	799
+			    max_width  	803
 			    justify    	0
 			    label      	"")
 			icon       	"boundary"
@@ -5314,7 +5314,7 @@
 			    location   	(2276, 2339)
 			    anchor_loc 	1
 			    nlines     	2
-			    max_width  	799
+			    max_width  	803
 			    justify    	0
 			    label      	"")
 			icon       	"boundary"
@@ -5346,7 +5346,7 @@
 			    location   	(1295, 2418)
 			    anchor_loc 	1
 			    nlines     	2
-			    max_width  	799
+			    max_width  	803
 			    justify    	0
 			    label      	"")
 			icon       	"boundary"
@@ -5378,7 +5378,7 @@
 			    location   	(2932, 1937)
 			    anchor_loc 	1
 			    nlines     	2
-			    max_width  	799
+			    max_width  	803
 			    justify    	0
 			    label      	"")
 			icon       	"boundary"
@@ -7746,7 +7746,7 @@
 			client     	@303
 			supplier   	@300
 			vertices   	(list Points
-			    (665, 1419)
+			    (575, 1478)
 			    (1099, 1122))
 			line_style 	0)
 		    (object ModVisView "" @309
@@ -7784,6 +7784,67 @@
     process_structure 	(object Processes
 	quid       	"5C2CC69F033D"
 	ProcsNDevs 	(list
+	    (object Processor "Банкомат №1"
+		quid       	"61D33D920198"
+		documentation 	"Устанавливается по адресу: ул. Садовая, д. 5"
+		connections 	(list connection_list
+		    (object Connection_Relationship
+			quid       	"5C2E55070220"
+			supplier   	"Cеть"
+			quidu      	"5C2E546D01A0"
+			supplier_is_device 	TRUE))
+		characteristics 	""
+		scheduling 	"Preemptive"
+		processes  	(list processes
+		    (object Process "MainATM"
+			quid       	"5C2E53460192"
+			priority   	"")))
+	    (object Processor "Банкомат №2"
+		quid       	"5C2E558E00FB"
+		documentation 	"Устанавливается по адресу: ул. Парковая, д. 7"
+		characteristics 	""
+		scheduling 	"Preemptive"
+		processes  	(list processes
+		    (object Process "MainATM"
+			quid       	"5C2E56BB0146"
+			priority   	"")))
+	    (object Processor "Банкомат № 3"
+		quid       	"5C2E55970190"
+		documentation 	"Устанавливается по адресу: ул. Лесная, д. 9"
+		characteristics 	""
+		scheduling 	"Preemptive"
+		processes  	(list processes
+		    (object Process "MainATM"
+			quid       	"5C2E56D803C1"
+			priority   	"")))
+	    (object Processor "Сервер Банка"
+		quid       	"5C2E561003E6"
+		characteristics 	""
+		scheduling 	"Preemptive"
+		processes  	(list processes
+		    (object Process "MainATM"
+			quid       	"5C2E56E70312"
+			priority   	"")))
+	    (object Device "Cеть"
+		quid       	"5C2E546D01A0"
+		stereotype 	"закрытая сеть"
+		connections 	(list connection_list
+		    (object Connection_Relationship
+			quid       	"5C2E56270336"
+			supplier   	"Банкомат №2"
+			quidu      	"5C2E558E00FB"
+			supplier_is_device 	FALSE)
+		    (object Connection_Relationship
+			quid       	"5C2E562D001C"
+			supplier   	"Банкомат № 3"
+			quidu      	"5C2E55970190"
+			supplier_is_device 	FALSE)
+		    (object Connection_Relationship
+			quid       	"5C2E56320379"
+			supplier   	"Сервер Банка"
+			quidu      	"5C2E561003E6"
+			supplier_is_device 	FALSE))
+		characteristics 	"")
 	    (object Process_Diagram "Deployment View"
 		quid       	"5C2CC69F033F"
 		title      	"Deployment View"
@@ -7792,7 +7853,279 @@
 		max_width  	21600
 		origin_x   	0
 		origin_y   	0
-		items      	(list diagram_item_list))))
+		items      	(list diagram_item_list
+		    (object ProcessorView "Банкомат №1" @312
+			location   	(453, 969)
+			font       	(object Font
+			    size       	10
+			    face       	"Arial"
+			    charSet    	204
+			    bold       	FALSE
+			    italics    	FALSE
+			    underline  	FALSE
+			    strike     	FALSE
+			    color      	0
+			    default_color 	TRUE)
+			label      	(object ItemLabel
+			    Parent_View 	@312
+			    location   	(274, 857)
+			    nlines     	2
+			    max_width  	287
+			    justify    	0
+			    label      	"Банкомат №1")
+			icon_style 	"Icon"
+			line_color 	3342489
+			quidu      	"61D33D920198"
+			width      	362
+			height     	294
+			annotation 	0)
+		    (object NoteView @313
+			location   	(438, 1470)
+			font       	(object Font
+			    size       	10
+			    face       	"Arial"
+			    charSet    	204
+			    bold       	FALSE
+			    italics    	FALSE
+			    underline  	FALSE
+			    strike     	FALSE
+			    color      	0
+			    default_color 	TRUE)
+			label      	(object ItemLabel
+			    Parent_View 	@313
+			    location   	(169, 1410)
+			    fill_color 	13434879
+			    nlines     	2
+			    max_width  	502
+			    justify    	1
+			    label      	"{адрес = ул. Садовая, д.5}")
+			line_color 	3342489
+			fill_color 	13434879
+			width      	562
+			height     	132)
+		    (object AttachView "" @314
+			stereotype 	TRUE
+			line_color 	3342489
+			client     	@312
+			supplier   	@313
+			vertices   	(list Points
+			    (453, 1116)
+			    (439, 1403))
+			line_style 	0)
+		    (object DeviceView "Cеть" @315
+			location   	(1479, 306)
+			font       	(object Font
+			    size       	10
+			    face       	"Arial"
+			    charSet    	204
+			    bold       	FALSE
+			    italics    	FALSE
+			    underline  	FALSE
+			    strike     	FALSE
+			    color      	0
+			    default_color 	TRUE)
+			label      	(object ItemLabel
+			    Parent_View 	@315
+			    location   	(1206, 172)
+			    nlines     	2
+			    max_width  	475
+			    justify    	0
+			    label      	"Cеть")
+			stereotype 	(object ItemLabel
+			    Parent_View 	@315
+			    location   	(1206, 122)
+			    anchor     	10
+			    nlines     	1
+			    max_width  	475
+			    justify    	0
+			    label      	"<<закрытая сеть>>")
+			icon_style 	"Icon"
+			line_color 	3342489
+			quidu      	"5C2E546D01A0"
+			width      	550
+			height     	437
+			annotation 	0)
+		    (object ConnectionView "" @316
+			stereotype 	TRUE
+			line_color 	3342489
+			quidu      	"5C2E55070220"
+			client     	@312
+			supplier   	@315
+			vertices   	(list Points
+			    (603, 969)
+			    (1204, 306))
+			line_style 	0)
+		    (object ProcessorView "Банкомат №2" @317
+			location   	(1422, 987)
+			font       	(object Font
+			    size       	10
+			    face       	"Arial"
+			    charSet    	204
+			    bold       	FALSE
+			    italics    	FALSE
+			    underline  	FALSE
+			    strike     	FALSE
+			    color      	0
+			    default_color 	TRUE)
+			label      	(object ItemLabel
+			    Parent_View 	@317
+			    location   	(1233, 868)
+			    nlines     	2
+			    max_width  	306
+			    justify    	0
+			    label      	"Банкомат №2")
+			icon_style 	"Icon"
+			line_color 	3342489
+			quidu      	"5C2E558E00FB"
+			width      	381
+			height     	307
+			annotation 	0)
+		    (object ProcessorView "Банкомат № 3" @318
+			location   	(2337, 969)
+			font       	(object Font
+			    size       	10
+			    face       	"Arial"
+			    charSet    	204
+			    bold       	FALSE
+			    italics    	FALSE
+			    underline  	FALSE
+			    strike     	FALSE
+			    color      	0
+			    default_color 	TRUE)
+			label      	(object ItemLabel
+			    Parent_View 	@318
+			    location   	(2139, 844)
+			    nlines     	2
+			    max_width  	325
+			    justify    	0
+			    label      	"Банкомат № 3")
+			icon_style 	"Icon"
+			line_color 	3342489
+			quidu      	"5C2E55970190"
+			width      	400
+			height     	319
+			annotation 	0)
+		    (object NoteView @319
+			location   	(1428, 1500)
+			font       	(object Font
+			    size       	10
+			    face       	"Arial"
+			    charSet    	204
+			    bold       	FALSE
+			    italics    	FALSE
+			    underline  	FALSE
+			    strike     	FALSE
+			    color      	0
+			    default_color 	TRUE)
+			label      	(object ItemLabel
+			    Parent_View 	@319
+			    location   	(1144, 1440)
+			    fill_color 	13434879
+			    nlines     	2
+			    max_width  	533
+			    justify    	1
+			    label      	"{адрес = ул. Парковая, д.7}")
+			line_color 	3342489
+			fill_color 	13434879
+			width      	593
+			height     	132)
+		    (object NoteView @320
+			location   	(2346, 1467)
+			font       	(object Font
+			    size       	10
+			    face       	"Arial"
+			    charSet    	204
+			    bold       	FALSE
+			    italics    	FALSE
+			    underline  	FALSE
+			    strike     	FALSE
+			    color      	0
+			    default_color 	TRUE)
+			label      	(object ItemLabel
+			    Parent_View 	@320
+			    location   	(2071, 1405)
+			    fill_color 	13434879
+			    nlines     	2
+			    max_width  	515
+			    justify    	1
+			    label      	"{адрес = ул. Лесная, д.9}")
+			line_color 	3342489
+			fill_color 	13434879
+			width      	575
+			height     	137)
+		    (object AttachView "" @321
+			stereotype 	TRUE
+			line_color 	3342489
+			client     	@317
+			supplier   	@319
+			vertices   	(list Points
+			    (1422, 1140)
+			    (1426, 1433))
+			line_style 	0)
+		    (object AttachView "" @322
+			stereotype 	TRUE
+			line_color 	3342489
+			client     	@318
+			supplier   	@320
+			vertices   	(list Points
+			    (2337, 1128)
+			    (2343, 1398))
+			line_style 	0)
+		    (object ProcessorView "Сервер Банка" @323
+			location   	(2541, 306)
+			font       	(object Font
+			    size       	10
+			    face       	"Arial"
+			    charSet    	204
+			    bold       	FALSE
+			    italics    	FALSE
+			    underline  	FALSE
+			    strike     	FALSE
+			    color      	0
+			    default_color 	TRUE)
+			label      	(object ItemLabel
+			    Parent_View 	@323
+			    location   	(2340, 178)
+			    nlines     	2
+			    max_width  	331
+			    justify    	0
+			    label      	"Сервер Банка")
+			icon_style 	"Icon"
+			line_color 	3342489
+			quidu      	"5C2E561003E6"
+			width      	406
+			height     	325
+			annotation 	0)
+		    (object ConnectionView "" @324
+			stereotype 	TRUE
+			line_color 	3342489
+			quidu      	"5C2E56270336"
+			client     	@315
+			supplier   	@317
+			vertices   	(list Points
+			    (1479, 524)
+			    (1422, 849))
+			line_style 	0)
+		    (object ConnectionView "" @325
+			stereotype 	TRUE
+			line_color 	3342489
+			quidu      	"5C2E562D001C"
+			client     	@315
+			supplier   	@318
+			vertices   	(list Points
+			    (1723, 306)
+			    (2137, 969))
+			line_style 	0)
+		    (object ConnectionView "" @326
+			stereotype 	TRUE
+			line_color 	3342489
+			quidu      	"5C2E56320379"
+			client     	@315
+			supplier   	@323
+			vertices   	(list Points
+			    (1723, 306)
+			    (2338, 306))
+			line_style 	0)))))
     properties 	(object Properties
 	attributes 	(list Attribute_Set
 	    (object Attribute
