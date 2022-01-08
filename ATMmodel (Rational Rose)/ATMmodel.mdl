@@ -5157,7 +5157,7 @@
 			    location   	(2296, 478)
 			    anchor_loc 	1
 			    nlines     	2
-			    max_width  	796
+			    max_width  	799
 			    justify    	0
 			    label      	"")
 			icon       	"boundary"
@@ -5189,7 +5189,7 @@
 			    location   	(375, 522)
 			    anchor_loc 	1
 			    nlines     	2
-			    max_width  	587
+			    max_width  	591
 			    justify    	0
 			    label      	"")
 			icon       	"Business Actor"
@@ -5220,7 +5220,7 @@
 			    location   	(1512, 1331)
 			    anchor_loc 	1
 			    nlines     	2
-			    max_width  	453
+			    max_width  	456
 			    justify    	0
 			    label      	"")
 			icon       	"control"
@@ -5251,7 +5251,7 @@
 			    location   	(331, 2024)
 			    anchor_loc 	1
 			    nlines     	2
-			    max_width  	444
+			    max_width  	446
 			    justify    	0
 			    label      	"")
 			icon       	"entity"
@@ -5282,7 +5282,7 @@
 			    location   	(377, 1246)
 			    anchor_loc 	1
 			    nlines     	2
-			    max_width  	796
+			    max_width  	799
 			    justify    	0
 			    label      	"")
 			icon       	"boundary"
@@ -5314,7 +5314,7 @@
 			    location   	(2276, 2339)
 			    anchor_loc 	1
 			    nlines     	2
-			    max_width  	796
+			    max_width  	799
 			    justify    	0
 			    label      	"")
 			icon       	"boundary"
@@ -5346,7 +5346,7 @@
 			    location   	(1295, 2418)
 			    anchor_loc 	1
 			    nlines     	2
-			    max_width  	796
+			    max_width  	799
 			    justify    	0
 			    label      	"")
 			icon       	"boundary"
@@ -5378,7 +5378,7 @@
 			    location   	(2932, 1937)
 			    anchor_loc 	1
 			    nlines     	2
-			    max_width  	796
+			    max_width  	799
 			    justify    	0
 			    label      	"")
 			icon       	"boundary"
@@ -5704,7 +5704,7 @@
 			line_color 	3342489
 			label      	(object SegLabel @195
 			    Parent_View 	@194
-			    location   	(1232, 1730)
+			    location   	(1232, 1824)
 			    font       	(object Font
 				size       	10
 				face       	"Arial"
@@ -7312,7 +7312,93 @@
 			fill_color 	13434879)))))
     root_subsystem 	(object SubSystem "Component View"
 	quid       	"5C2CC69F033C"
-	physical_models 	(list unit_reference_list)
+	physical_models 	(list unit_reference_list
+	    (object module "MainATM.exe" "NotAModuleType" "NotAModulePart"
+		quid       	"5C2E48E3003B"
+		documentation 	
+|Реализует классы: 
+|Контроллер Банкомата и 
+|Транзакция Банкомата
+		
+		stereotype 	"EXE"
+		visible_modules 	(list dependency_list
+		    (object Module_Visibility_Relationship
+			quid       	"5C2E4BC00358"
+			supplier   	"Component View::MainBank"
+			quidu      	"5C2E4B860319"
+			supplier_is_spec 	TRUE)
+		    (object Module_Visibility_Relationship
+			quid       	"5C2E4D9A02C4"
+			supplier   	"Component View::Устройства Банкомата"
+			quidu      	"5C2E4D770352"
+			supplier_is_spec 	TRUE))
+		language   	"")
+	    (object module "NewSubprogSpec" "SubType" "Specification"
+		quid       	"5C2E4B470172"
+		stereotype 	"Subprogram Specification"
+		language   	"")
+	    (object module "MainBank" "SubType" "Main"
+		quid       	"5C2E4B860319"
+		documentation 	
+|Реализует интерфейс:
+|IКонтроллер Банка
+		
+		stereotype 	"Main Program"
+		language   	"")
+	    (object module "Устройства Банкомата" "TaskType" "Specification"
+		quid       	"5C2E4D770352"
+		stereotype 	"Task Specification"
+		language   	"")
+	    (object module "Устройство чтения карточки," "TaskType" "Body"
+		quid       	"5C2E4DB10386"
+		stereotype 	"Task Body"
+		visible_modules 	(list dependency_list
+		    (object Module_Visibility_Relationship
+			quid       	"5C2E4E5A01A7"
+			supplier   	"Component View::Устройства Банкомата"
+			quidu      	"5C2E4D770352"
+			supplier_is_spec 	TRUE))
+		language   	"")
+	    (object module "Клавиатура Банкомата" "TaskType" "Body"
+		quid       	"5C2E4DCA00C4"
+		stereotype 	"Task Body"
+		visible_modules 	(list dependency_list
+		    (object Module_Visibility_Relationship
+			quid       	"5C2E4E5D03A5"
+			supplier   	"Component View::Устройства Банкомата"
+			quidu      	"5C2E4D770352"
+			supplier_is_spec 	TRUE))
+		language   	"")
+	    (object module "Принтер Банкомата" "TaskType" "Body"
+		quid       	"5C2E4DE30135"
+		stereotype 	"Task Body"
+		visible_modules 	(list dependency_list
+		    (object Module_Visibility_Relationship
+			quid       	"5C2E4E600283"
+			supplier   	"Component View::Устройства Банкомата"
+			quidu      	"5C2E4D770352"
+			supplier_is_spec 	TRUE))
+		language   	"")
+	    (object module "Экран Банкомата" "TaskType" "Body"
+		quid       	"5C2E4DFB0373"
+		stereotype 	"Task Body"
+		visible_modules 	(list dependency_list
+		    (object Module_Visibility_Relationship
+			quid       	"5C2E4E63034F"
+			supplier   	"Component View::Устройства Банкомата"
+			quidu      	"5C2E4D770352"
+			supplier_is_spec 	TRUE))
+		language   	"")
+	    (object module "Устройство выдачи наличных" "TaskType" "Body"
+		quid       	"5C2E4E1A023D"
+		stereotype 	"Task Body"
+		visible_modules 	(list dependency_list
+		    (object Module_Visibility_Relationship
+			quid       	"5C2E4E660398"
+			supplier   	"Component View::Устройства Банкомата"
+			quidu      	"5C2E4D770352"
+			supplier_is_spec 	TRUE))
+		language   	""))
 	physical_presentations 	(list unit_reference_list
 	    (object Module_Diagram "Main"
 		quid       	"5C2CC69F034C"
@@ -7322,7 +7408,377 @@
 		max_width  	21600
 		origin_x   	0
 		origin_y   	0
-		items      	(list diagram_item_list)))
+		items      	(list diagram_item_list
+		    (object ModView "Component View::MainATM.exe" "NotAModuleType" "NotAModulePart" @293
+			location   	(1218, 627)
+			font       	(object Font
+			    size       	10
+			    face       	"Arial"
+			    charSet    	204
+			    bold       	FALSE
+			    italics    	FALSE
+			    underline  	FALSE
+			    strike     	FALSE
+			    color      	0
+			    default_color 	TRUE)
+			label      	(object ItemLabel
+			    Parent_View 	@293
+			    location   	(1141, 595)
+			    fill_color 	13434879
+			    anchor_loc 	3
+			    nlines     	2
+			    max_width  	291
+			    justify    	1
+			    label      	"MainATM.exe")
+			icon       	"EXE"
+			icon_style 	"Icon"
+			line_color 	3342489
+			fill_color 	13434879
+			quidu      	"5C2E48E3003B"
+			width      	525
+			height     	212
+			autoResize 	TRUE
+			width      	525
+			height     	212)
+		    (object ModView "Component View::MainBank" "SubType" "Main" @294
+			location   	(2376, 627)
+			font       	(object Font
+			    size       	10
+			    face       	"Arial"
+			    charSet    	204
+			    bold       	FALSE
+			    italics    	FALSE
+			    underline  	FALSE
+			    strike     	FALSE
+			    color      	0
+			    default_color 	TRUE)
+			label      	(object ItemLabel
+			    Parent_View 	@294
+			    location   	(2273, 431)
+			    anchor_loc 	3
+			    nlines     	1
+			    max_width  	400
+			    justify    	1
+			    label      	"MainBank")
+			icon       	"Main Program"
+			icon_style 	"Icon"
+			line_color 	3342489
+			fill_color 	13434879
+			quidu      	"5C2E4B860319"
+			autoResize 	TRUE
+			width      	210
+			height     	312)
+		    (object ModVisView "" @295
+			stereotype 	TRUE
+			line_color 	3342489
+			quidu      	"5C2E4BC00358"
+			client     	@293
+			supplier   	@294
+			vertices   	(list Points
+			    (1470, 627)
+			    (2272, 627))
+			line_style 	0)
+		    (object NoteView @296
+			location   	(663, 189)
+			font       	(object Font
+			    size       	10
+			    face       	"Arial"
+			    charSet    	204
+			    bold       	FALSE
+			    italics    	FALSE
+			    underline  	FALSE
+			    strike     	FALSE
+			    color      	0
+			    default_color 	TRUE)
+			label      	(object ItemLabel
+			    Parent_View 	@296
+			    location   	(397, 99)
+			    fill_color 	13434879
+			    nlines     	3
+			    max_width  	496
+			    justify    	1
+			    label      	
+|Реализует классы: 
+|Контроллер Банкомата и 
+|Транзакция Банкомата
+			    )
+			line_color 	3342489
+			fill_color 	13434879
+			width      	556
+			height     	193)
+		    (object NoteView @297
+			location   	(1920, 183)
+			font       	(object Font
+			    size       	10
+			    face       	"Arial"
+			    charSet    	204
+			    bold       	FALSE
+			    italics    	FALSE
+			    underline  	FALSE
+			    strike     	FALSE
+			    color      	0
+			    default_color 	TRUE)
+			label      	(object ItemLabel
+			    Parent_View 	@297
+			    location   	(1713, 102)
+			    fill_color 	13434879
+			    nlines     	3
+			    max_width  	378
+			    justify    	1
+			    label      	
+|Реализует интерфейс:
+|IКонтроллер Банка
+			    )
+			line_color 	3342489
+			fill_color 	13434879
+			width      	438
+			height     	175)
+		    (object AttachView "" @298
+			stereotype 	TRUE
+			line_color 	3342489
+			client     	@296
+			supplier   	@293
+			vertices   	(list Points
+			    (785, 285)
+			    (1085, 523))
+			line_style 	0)
+		    (object AttachView "" @299
+			stereotype 	TRUE
+			line_color 	3342489
+			client     	@297
+			supplier   	@294
+			vertices   	(list Points
+			    (2009, 270)
+			    (2271, 524))
+			line_style 	0)
+		    (object ModView "Component View::Устройства Банкомата" "TaskType" "Specification" @300
+			location   	(1218, 1047)
+			font       	(object Font
+			    size       	10
+			    face       	"Arial"
+			    charSet    	204
+			    bold       	FALSE
+			    italics    	FALSE
+			    underline  	FALSE
+			    strike     	FALSE
+			    color      	0
+			    default_color 	TRUE)
+			label      	(object ItemLabel
+			    Parent_View 	@300
+			    location   	(1211, 929)
+			    anchor_loc 	3
+			    nlines     	1
+			    max_width  	545
+			    justify    	1
+			    label      	"Устройства Банкомата")
+			icon       	"Task Specification"
+			icon_style 	"Icon"
+			line_color 	3342489
+			fill_color 	13434879
+			quidu      	"5C2E4D770352"
+			autoResize 	TRUE
+			width      	282
+			height     	156)
+		    (object ModVisView "" @301
+			stereotype 	TRUE
+			line_color 	3342489
+			quidu      	"5C2E4D9A02C4"
+			client     	@293
+			supplier   	@300
+			vertices   	(list Points
+			    (1218, 728)
+			    (1218, 903))
+			line_style 	0)
+		    (object ModView "Component View::Устройство чтения карточки," "TaskType" "Body" @302
+			location   	(309, 1062)
+			font       	(object Font
+			    size       	10
+			    face       	"Arial"
+			    charSet    	204
+			    bold       	FALSE
+			    italics    	FALSE
+			    underline  	FALSE
+			    strike     	FALSE
+			    color      	0
+			    default_color 	TRUE)
+			label      	(object ItemLabel
+			    Parent_View 	@302
+			    location   	(302, 944)
+			    anchor_loc 	3
+			    nlines     	1
+			    max_width  	545
+			    justify    	1
+			    label      	"Устройство чтения карточки,")
+			icon       	"Task Body"
+			icon_style 	"Icon"
+			line_color 	3342489
+			fill_color 	13434879
+			quidu      	"5C2E4DB10386"
+			autoResize 	TRUE
+			width      	282
+			height     	156)
+		    (object ModView "Component View::Клавиатура Банкомата" "TaskType" "Body" @303
+			location   	(447, 1563)
+			font       	(object Font
+			    size       	10
+			    face       	"Arial"
+			    charSet    	204
+			    bold       	FALSE
+			    italics    	FALSE
+			    underline  	FALSE
+			    strike     	FALSE
+			    color      	0
+			    default_color 	TRUE)
+			label      	(object ItemLabel
+			    Parent_View 	@303
+			    location   	(440, 1445)
+			    anchor_loc 	3
+			    nlines     	1
+			    max_width  	549
+			    justify    	1
+			    label      	"Клавиатура Банкомата")
+			icon       	"Task Body"
+			icon_style 	"Icon"
+			line_color 	3342489
+			fill_color 	13434879
+			quidu      	"5C2E4DCA00C4"
+			autoResize 	TRUE
+			width      	282
+			height     	156)
+		    (object ModView "Component View::Принтер Банкомата" "TaskType" "Body" @304
+			location   	(1224, 1569)
+			font       	(object Font
+			    size       	10
+			    face       	"Arial"
+			    charSet    	204
+			    bold       	FALSE
+			    italics    	FALSE
+			    underline  	FALSE
+			    strike     	FALSE
+			    color      	0
+			    default_color 	TRUE)
+			label      	(object ItemLabel
+			    Parent_View 	@304
+			    location   	(1217, 1451)
+			    anchor_loc 	3
+			    nlines     	1
+			    max_width  	553
+			    justify    	1
+			    label      	"Принтер Банкомата")
+			icon       	"Task Body"
+			icon_style 	"Icon"
+			line_color 	3342489
+			fill_color 	13434879
+			quidu      	"5C2E4DE30135"
+			autoResize 	TRUE
+			width      	282
+			height     	156)
+		    (object ModView "Component View::Экран Банкомата" "TaskType" "Body" @305
+			location   	(2046, 1575)
+			font       	(object Font
+			    size       	10
+			    face       	"Arial"
+			    charSet    	204
+			    bold       	FALSE
+			    italics    	FALSE
+			    underline  	FALSE
+			    strike     	FALSE
+			    color      	0
+			    default_color 	TRUE)
+			label      	(object ItemLabel
+			    Parent_View 	@305
+			    location   	(2039, 1457)
+			    anchor_loc 	3
+			    nlines     	1
+			    max_width  	556
+			    justify    	1
+			    label      	"Экран Банкомата")
+			icon       	"Task Body"
+			icon_style 	"Icon"
+			line_color 	3342489
+			fill_color 	13434879
+			quidu      	"5C2E4DFB0373"
+			autoResize 	TRUE
+			width      	282
+			height     	156)
+		    (object ModView "Component View::Устройство выдачи наличных" "TaskType" "Body" @306
+			location   	(1980, 1077)
+			font       	(object Font
+			    size       	10
+			    face       	"Arial"
+			    charSet    	204
+			    bold       	FALSE
+			    italics    	FALSE
+			    underline  	FALSE
+			    strike     	FALSE
+			    color      	0
+			    default_color 	TRUE)
+			label      	(object ItemLabel
+			    Parent_View 	@306
+			    location   	(1973, 959)
+			    anchor_loc 	3
+			    nlines     	1
+			    max_width  	560
+			    justify    	1
+			    label      	"Устройство выдачи наличных")
+			icon       	"Task Body"
+			icon_style 	"Icon"
+			line_color 	3342489
+			fill_color 	13434879
+			quidu      	"5C2E4E1A023D"
+			autoResize 	TRUE
+			width      	282
+			height     	156)
+		    (object ModVisView "" @307
+			stereotype 	TRUE
+			line_color 	3342489
+			quidu      	"5C2E4E5A01A7"
+			client     	@302
+			supplier   	@300
+			vertices   	(list Points
+			    (447, 1057)
+			    (1077, 1047))
+			line_style 	0)
+		    (object ModVisView "" @308
+			stereotype 	TRUE
+			line_color 	3342489
+			quidu      	"5C2E4E5D03A5"
+			client     	@303
+			supplier   	@300
+			vertices   	(list Points
+			    (665, 1419)
+			    (1099, 1122))
+			line_style 	0)
+		    (object ModVisView "" @309
+			stereotype 	TRUE
+			line_color 	3342489
+			quidu      	"5C2E4E600283"
+			client     	@304
+			supplier   	@300
+			vertices   	(list Points
+			    (1220, 1425)
+			    (1218, 1122))
+			line_style 	0)
+		    (object ModVisView "" @310
+			stereotype 	TRUE
+			line_color 	3342489
+			quidu      	"5C2E4E660398"
+			client     	@306
+			supplier   	@300
+			vertices   	(list Points
+			    (1840, 1068)
+			    (1356, 1051))
+			line_style 	0)
+		    (object ModVisView "" @311
+			stereotype 	TRUE
+			line_color 	3342489
+			quidu      	"5C2E4E63034F"
+			client     	@305
+			supplier   	@300
+			vertices   	(list Points
+			    (1923, 1498)
+			    (1338, 1122))
+			line_style 	0))))
 	category   	"Logical View"
 	quidu      	"5C2CC69F033A")
     process_structure 	(object Processes
