@@ -1,1 +1,3 @@
 # Information_systems_software_design_technologies
+There are training university projects
+
